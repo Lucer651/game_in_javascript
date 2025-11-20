@@ -1,0 +1,40 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: lightblue;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.cell:hover {
+    background-color: deepskyblue;
+}
+.ship-placed {
+    background-color: gray;
+}
+
+.Minesweeper-placed {
+    background-color: green;
+}
+.destroyer-placed {
+    background-color: brown;
+}
+.submarine-placed {
+    background-color: orange;
+}
+.battleship-placed {
+    background-color: purple;
+}
+.carrier-placed {
+    background-color: red;
+}
