@@ -92,8 +92,8 @@ function setup() {
 }
 
 
-function createGrid(grid) {
-    const gridElement = document.querySelector('.grid');
+function createGrid(grid, element) {
+    const gridElement = document.querySelector(element || '.grid');
     gridElement.innerHTML = '';
     for (let row = 0; row < 10; row++) {
         for (let col = 0; col < 10; col++) {

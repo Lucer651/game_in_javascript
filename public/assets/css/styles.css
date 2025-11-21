@@ -1,8 +1,11 @@
-.grid {
+.grid, #player1_grids, #player2_grids {
     display: grid;
     grid-template-columns: repeat(10, 40px);
     grid-template-rows: repeat(10, 40px);
 
+}
+#player1_grids, #player2_grids {
+    display: none;
 }
 
 .cell {

@@ -205,6 +205,8 @@ function click(row, col, grid) {
         console.log('All ships placed!');
         document.getElementById('confirm').style.cursor = 'pointer';
         document.getElementById('confirm').onclick = function () {
+            console.log('Placement confirmed for player', playerturn ? '1' : '0');
+            playerturn = !playerturn;
             alert('All ships placed! Proceeding to the next phase.');
             setTimeout(() => {
                 document.getElementById('placement_grid').style.display = 'none';
