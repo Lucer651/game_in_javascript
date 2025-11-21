@@ -82,10 +82,10 @@ function setup() {
         }
     });
     document.getElementById('reset').onclick = function() {
-                resetPlacement();
+                resetPlacement(grid_defense_player1);
                 // Reset the placement of ships
             }
-    resetPlacement();
+    resetPlacement(grid_defense_player1);
     createGrid();
 }
 
@@ -97,7 +97,7 @@ function createGrid() {
         for (let col = 0; col < 10; col++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            cell.addEventListener('click', () => click(row, col));
+            cell.addEventListener('click', () => click(row, col, grid_defense_player1));
             cell.addEventListener('mouseenter', () => hover(row, col));
             cell.addEventListener('mouseleave', clearHover);
             gridElement.appendChild(cell);
