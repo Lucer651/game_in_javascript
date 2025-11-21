@@ -54,8 +54,8 @@ function click(row, col, grid) {
             for (i = 1; i < 2; i++) {
                 console.log(grid[row + i][col]);
                 if (grid[row + i][col] !== null) {
-                return;
-            }
+                    return;
+                }
             }
             grid[row][col] = 'Minesweeper';
             grid[row + 1][col] = 'Minesweeper';
@@ -68,8 +68,8 @@ function click(row, col, grid) {
             for (i = 1; i < 3; i++) {
                 console.log(grid[row + i][col]);
                 if (grid[row + i][col] !== null) {
-                return;
-            }
+                    return;
+                }
             }
             grid[row][col] = 'destroyer';
             grid[row + 1][col] = 'destroyer';
@@ -82,8 +82,8 @@ function click(row, col, grid) {
             for (i = 1; i < 3; i++) {
                 console.log(grid[row + i][col]);
                 if (grid[row + i][col] !== null) {
-                return;
-            }
+                    return;
+                }
             }
             grid[row][col] = 'submarine';
             grid[row + 1][col] = 'submarine';
@@ -96,8 +96,8 @@ function click(row, col, grid) {
             for (i = 1; i < 4; i++) {
                 console.log(grid[row + i][col]);
                 if (grid[row + i][col] !== null) {
-                return;
-            }
+                    return;
+                }
             }
             grid[row][col] = 'battleship';
             grid[row + 1][col] = 'battleship';
@@ -111,8 +111,8 @@ function click(row, col, grid) {
             for (i = 1; i < 5; i++) {
                 console.log(grid[row + i][col]);
                 if (grid[row + i][col] !== null) {
-                return;
-            }
+                    return;
+                }
             }
             grid[row][col] = 'carrier';
             grid[row + 1][col] = 'carrier';
@@ -130,11 +130,11 @@ function click(row, col, grid) {
             }
             for (i = 1; i < 2; i++) {
                 console.log(grid[row][col + i]);
-                if (grid[row][col+ i] !== null) {
-                return;
+                if (grid[row][col + i] !== null) {
+                    return;
+                }
             }
-            }
-            
+
             grid[row][col] = 'Minesweeper';
             grid[row][col + 1] = 'Minesweeper';
         }
@@ -144,9 +144,9 @@ function click(row, col, grid) {
             }
             for (i = 1; i < 3; i++) {
                 console.log(grid[row][col + i]);
-                if (grid[row][col+ i] !== null) {
-                return;
-            }
+                if (grid[row][col + i] !== null) {
+                    return;
+                }
             }
             grid[row][col] = 'destroyer';
             grid[row][col + 1] = 'destroyer';
@@ -158,9 +158,9 @@ function click(row, col, grid) {
             }
             for (i = 1; i < 3; i++) {
                 console.log(grid[row][col + i]);
-                if (grid[row][col+ i] !== null) {
-                return;
-            }
+                if (grid[row][col + i] !== null) {
+                    return;
+                }
             }
             grid[row][col] = 'submarine';
             grid[row][col + 1] = 'submarine';
@@ -172,9 +172,9 @@ function click(row, col, grid) {
             }
             for (i = 1; i < 4; i++) {
                 console.log(grid[row][col + i]);
-                if (grid[row][col+ i] !== null) {
-                return;
-            }
+                if (grid[row][col + i] !== null) {
+                    return;
+                }
             }
             grid[row][col] = 'battleship';
             grid[row][col + 1] = 'battleship';
@@ -187,41 +187,47 @@ function click(row, col, grid) {
             }
             for (i = 1; i < 5; i++) {
                 console.log(grid[row][col + i]);
-                if (grid[row][col+ i] !== null) {
-                return;
-            }
+                if (grid[row][col + i] !== null) {
+                    return;
+                }
             }
             grid[row][col] = 'carrier';
             grid[row][col + 1] = 'carrier';
             grid[row][col + 2] = 'carrier';
             grid[row][col + 3] = 'carrier';
-            grid[row][col + 4] = 'carrier'; 
+            grid[row][col + 4] = 'carrier';
         }
         currentBoat++;
-        if (currentBoat > 4) {
-            console.log('All ships placed!');
-            document.getElementById('confirm').style.cursor = 'pointer';
-            document.getElementById('confirm').onclick = function() {
-                alert('All ships placed! Proceeding to the next phase.');
-                setTimeout(() => {
-                    document.getElementById('placement_grid').style.display = 'none';
-                }, 500);
-
-                // Proceed to the next phase of the game
-            }
-        }
-        
-        createGrid();
+        createGrid(grid);
     } //Rotated false for ships placed horizontally
+
+    if (currentBoat > 4) {
+        console.log('All ships placed!');
+        document.getElementById('confirm').style.cursor = 'pointer';
+        document.getElementById('confirm').onclick = function () {
+            alert('All ships placed! Proceeding to the next phase.');
+            setTimeout(() => {
+                document.getElementById('placement_grid').style.display = 'none';
+            }, 500);
+            // Proceed to the next phase of the game
+            document.getElementById('intermission_screen').style.display = 'block';
+        }
+    }
+    if (!playerturn) {
+        document.getElementById('confirm').onclick = function () {
+            document.getElementById('placement_grid').style.display = 'none';
+            document.getElementById('phase2_intermission_screen').style.display = 'block';
+        };
+    }
 }
 
 function resetPlacement(grid) {
-    for (let row =0; row < 10; row++) {
-        for (let col =0; col <10; col++) {
+    for (let row = 0; row < 10; row++) {
+        for (let col = 0; col < 10; col++) {
             grid[row][col] = null;
         }
     }
-    
+
     currentBoat = 0;
-    createGrid();
+    createGrid(grid);
 }
