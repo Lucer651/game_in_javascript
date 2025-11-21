@@ -38,3 +38,30 @@
 .carrier-placed {
     background-color: red;
 }
+.hover-ship {
+    background-color: deepskyblue;
+}
+#confirm {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 75px;
+    width: 200px;
+}
+#confirm:hover {
+    background-color: lightgray;
+}
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 75px;
+    width: 200px;
+}
+#reset:hover {
+    background-color: lightgray;
+}
