@@ -44,7 +44,7 @@ function clearHover() {
         .forEach(cell => cell.classList.remove('hover-ship'));
 }
 
-function click(row, col, grid) {
+function place(row, col, grid) {
     console.log('Clicked row:', row, 'col:', col);
     if (rotated) {
         if (currentBoat == 0) {

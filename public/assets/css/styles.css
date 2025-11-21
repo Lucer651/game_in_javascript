@@ -1,11 +1,12 @@
-.grid, #player1_grids, #player2_grids {
+.grid, #player1_grids, #player2_grids, #player1_grids_offense, #player2_grids_offense {
     display: grid;
     grid-template-columns: repeat(10, 40px);
     grid-template-rows: repeat(10, 40px);
 
 }
-#player1_grids, #player2_grids {
+#player1_grids, #player2_grids, #player1_grids_offense, #player2_grids_offense {
     display: none;
+    margin-top: 20px;
 }
 
 .cell {

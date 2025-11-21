@@ -19,5 +19,7 @@ function startGame() {
 document.getElementById('ready_button').onclick = function() {
     document.getElementById('phase2_intermission_screen').style.display = 'none';
     document.getElementById('player1_grids').style.display = 'grid';
+    document.getElementById('player1_grids_offense').style.display = 'grid';
     createGrid(grid_defense_player1, '#player1_grids');
+    gamestate = 'battle';
 } 
