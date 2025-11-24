@@ -11,8 +11,11 @@ function createGrid(grid, element) {
             fireAtPlayer1();
             fireAtPlayer2();
 
-            // Add placed ship classes
+            // Add placed ship classes 
             if (!grid[row]) {
+                return;
+            }
+            if (!grid[col]) {
                 return;
             }
             if (grid[row][col] === 'Minesweeper') {

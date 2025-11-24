@@ -121,7 +121,7 @@ function place(row, col, grid) {
             grid[row + 4][col] = 'carrier';
         }
         currentBoat++;
-        createGrid();
+        createGrid(grid);
     } //Rotated true for ships placed vertically
     else {
         if (currentBoat == 0) {
