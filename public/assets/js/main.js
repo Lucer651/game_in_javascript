@@ -35,8 +35,10 @@ function click(row, col, grid) {
     if (gamestate === 'battle') {
         if (playerturn) {
             fireAtPlayer2(row, col);
+            playerturn = false;
         } else {
             fireAtPlayer1(row, col);
+            playerturn = true;
         }
     }
 }   

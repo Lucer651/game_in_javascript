@@ -8,11 +8,13 @@ function createGrid(grid, element) {
             cell.addEventListener('click', () => click(row, col, grid));
             cell.addEventListener('mouseenter', () => hover(row, col));
             cell.addEventListener('mouseleave', clearHover);
-            gridElement.appendChild(cell);
             fireAtPlayer1();
             fireAtPlayer2();
 
             // Add placed ship classes
+            if (!grid[row]) {
+                return;
+            }
             if (grid[row][col] === 'Minesweeper') {
                 cell.classList.add('Minesweeper-placed');
             }
@@ -28,6 +30,23 @@ function createGrid(grid, element) {
             if (grid[row][col] === 'carrier') {
                 cell.classList.add('carrier-placed');
             }
+            if (playerturn) {
+                if (grid_offense_player1[row][col] === 'hit') {
+                    cell.classList.add('hit');
+                }
+                if (grid_offense_player1[row][col] === 'miss') {
+                    cell.classList.add('miss');
+                }
+            }
+            if (!playerturn) {
+                if (grid_offense_player2[row][col] === 'hit') {
+                    cell.classList.add('hit');
+                }
+                if (grid_offense_player2[row][col] === 'miss') {
+                    cell.classList.add('miss');
+                }
+            }
+            gridElement.appendChild(cell);
         }
     }
 }

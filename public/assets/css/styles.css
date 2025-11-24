@@ -97,3 +97,15 @@
     align-items: center;
     justify-content: center;
 }
+.hit {
+    background-color: red;
+}
+.miss {
+    background-color: green;
+}
+#battle_intermission {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
