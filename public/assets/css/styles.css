@@ -97,11 +97,19 @@
     align-items: center;
     justify-content: center;
 }
-.hit {
-    background-color: red;
+.hit:after {
+    content: 'X';
+    color: red;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
 }
-.miss {
-    background-color: green;
+.miss:after {
+    content: 'O';
+    color: green;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
 }
 #battle_intermission {
     display: none;
