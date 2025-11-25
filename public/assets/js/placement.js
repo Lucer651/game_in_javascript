@@ -207,10 +207,8 @@ function place(row, col, grid) {
         document.getElementById('confirm').onclick = function () {
             console.log('Placement confirmed for player', playerturn ? '1' : '0');
             playerturn = !playerturn;
-            alert('All ships placed! Proceeding to the next phase.');
-            setTimeout(() => {
-                document.getElementById('placement_grid').style.display = 'none';
-            }, 500);
+            // alert('All ships placed! Proceeding to the next phase.');
+            document.getElementById('placement_grid').style.display = 'none';
             // Proceed to the next phase of the game
             document.getElementById('intermission_screen').style.display = 'block';
         }

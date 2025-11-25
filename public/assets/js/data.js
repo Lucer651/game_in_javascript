@@ -63,4 +63,6 @@ let rotated = false;
 let cooldown = false;
 let gamestate = 'placement'; // 'placement' or 'battle'
 let playerturn = true //true for player 1, false for player 2
+let totalHits1 = 0;
+let totalHits2 = 0;
 const shipSizes = [2, 3, 3, 4, 5];

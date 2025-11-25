@@ -17,6 +17,7 @@ function fireAtPlayer2(row, col) {
             // Ship present -> record hit only in offense grid, keep ship value on defense
             grid_offense_player1[row][col] = 'hit';
             alert('Hit!');
+            totalHits1++;
         } else {
             // Water -> record miss only in offense grid (defense stays null)
             grid_offense_player1[row][col] = 'miss';
@@ -32,6 +33,12 @@ function fireAtPlayer2(row, col) {
         document.getElementById('player1_grids_offense').style.display = 'none';
         document.getElementById('battle_intermission').style.display = 'block';
     }
+    if (totalHits1 >= 17) {
+        alert('Player 1 wins!');
+        document.getElementById('battle_intermission').style.display = 'none';
+        document.getElementById('game_over_screen').style.display = 'block';
+        document.getElementById('winner_announcement').textContent = 'Player 1 wins!';
+    }
 }
 
 function fireAtPlayer1(row, col) {
@@ -46,6 +53,7 @@ function fireAtPlayer1(row, col) {
         if (grid_defense_player1[row][col] !== null) {
             grid_offense_player2[row][col] = 'hit';
             alert('Hit!');
+            totalHits2++;
         } else {
             grid_offense_player2[row][col] = 'miss';
             alert('Miss!');
@@ -58,6 +66,13 @@ function fireAtPlayer1(row, col) {
         document.getElementById('player2_grids_offense').style.display = 'none';
         document.getElementById('battle_intermission').style.display = 'block';
     }
+    if (totalHits2 >= 17) {
+        alert('Player 2 wins!');
+        document.getElementById('battle_intermission').style.display = 'none';
+        document.getElementById('game_over_screen').style.display = 'block';
+        document.getElementById('winner_announcement').textContent = 'Player 2 wins!';
+    }
+
 }
 
 

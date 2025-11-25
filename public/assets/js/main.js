@@ -19,13 +19,16 @@ function setup() {
             cooldown = false;
         }
     });
-    document.getElementById('reset').onclick = function() {
-                resetPlacement(grid_defense_player1);
-                // Reset the placement of ships
-            }
+    document.getElementById('reset').onclick = function () {
+        resetPlacement(grid_defense_player1);
+        // Reset the placement of ships
+    }
     resetPlacement(grid_defense_player1);
     createGrid(grid_defense_player1);
-
+    document.getElementById('restart_button').addEventListener('click', () => {
+        console.log('Restarting game...');
+        window.location.reload(); //temporary fix, later will implement proper reset function 
+    });
 }
 function click(row, col, grid) {
     if (gamestate === 'placement') {
@@ -41,7 +44,7 @@ function click(row, col, grid) {
             playerturn = true;
         }
     }
-}   
+}
 
 
 

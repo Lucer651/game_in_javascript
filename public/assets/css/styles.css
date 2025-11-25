@@ -28,7 +28,7 @@
 }
 
 .Minesweeper-placed {
-    background-color: green;
+    background-color: yellow;
 }
 .destroyer-placed {
     background-color: brown;
@@ -40,7 +40,7 @@
     background-color: purple;
 }
 .carrier-placed {
-    background-color: red;
+    background-color: grey;
 }
 .hover-ship {
     background-color: deepskyblue;
@@ -112,6 +112,12 @@
     font-size: 50px;
 }
 #battle_intermission {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#game_over_screen {
     display: none;
     flex-direction: column;
     align-items: center;
